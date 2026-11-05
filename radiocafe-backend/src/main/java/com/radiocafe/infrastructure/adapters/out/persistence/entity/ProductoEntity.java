@@ -1,0 +1,39 @@
+package com.radiocafe.infrastructure.adapters.out.persistence.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "productos")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductoEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
+    private Long idProducto;
+
+    @Column(nullable = false, length = 120)
+    private String nombre;
+
+    @Column(columnDefinition = "TEXT")
+    private String descripcion;
+
+    @Column(nullable = false, length = 50)
+    private String categoria;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal precio;
+
+    @Column(name = "imagen_url", columnDefinition = "TEXT")
+    private String imagenUrl;
+
+    @Column(nullable = false)
+    private Boolean disponible = true;
+}

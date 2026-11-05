@@ -1,0 +1,8 @@
+# Frontend
+radiocafe-frontend/node_modules/
+radiocafe-frontend/dist/
+
+# Backend
+radiocafe-backend/target/
+radiocafe-backend/.idea/
+radiocafe-backend/.settings/
